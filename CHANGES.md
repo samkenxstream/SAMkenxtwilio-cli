@@ -1,3 +1,486 @@
+## [5.6.0](https://github.com/twilio/twilio-cli/compare/5.5.0...5.6.0) (2023-04-06)
+
+
+### Library - Fixes
+
+* Swapping make install step to run after node setup in npm audit job ([#520](https://github.com/twilio/twilio-cli/issues/520)) ([0ed7d26](https://github.com/twilio/twilio-cli/commit/0ed7d26c5476a6e2005791b9541de10c87d2bbd8))
+
+
+### Library - Chores
+
+* ci ([3a60489](https://github.com/twilio/twilio-cli/commit/3a6048975f52242f5775ef4333bbe57cc1c0a9cc))
+* **release:** set `package.json` to 5.5.1 [skip ci] ([638f004](https://github.com/twilio/twilio-cli/commit/638f00487617b7596eb1d5f6dee0286579c9b39c)), closes [#520](https://github.com/twilio/twilio-cli/issues/520)
+* **release:** set `package.json` to 5.5.2 [skip ci] ([3aed7ed](https://github.com/twilio/twilio-cli/commit/3aed7ed449ef67c9fbd3e68465aa91e8ea85102b))
+* update ([49e1e1f](https://github.com/twilio/twilio-cli/commit/49e1e1f9368d6f294f80ee5570ae7ce1d346ec40))
+
+---------------------------
+**Conversations**
+- Expose query parameters ,  and  in list operation on Conversations resource for sorting and filtering
+
+**Insights**
+- Added answered by filter in Call Summaries
+
+**Lookups**
+- Remove  package **(breaking change)**
+
+**Messaging**
+- Add support for  brand type and  campaign use case.
+- New Sole Proprietor Brands should be created with  brand type. Brand registration requests with  brand type will be rejected.
+- New Sole Proprietor Campaigns should be created with  campaign use case. Campaign registration requests with  campaign use case will be rejected.
+- Add Brand Registrations OTP API## [5.5.0](https://github.com/twilio/twilio-cli/compare/5.4.3...5.5.0) (2023-03-23)
+
+---------------------------
+**Api**
+- Revert Corrected the data type for  in Available Phone Number Local, Mobile and TollFree resources
+- Corrected the data type for  in Available Phone Number Local, Mobile and TollFree resources **(breaking change)**
+
+**Messaging**
+- Add  resource
+- Add new endpoint for GetDomainConfigByMessagingServiceSid
+- Remove  parameter and add  parameter to Link Shortening API **(breaking change)**### [5.4.3](https://github.com/twilio/twilio-cli/compare/5.4.2...5.4.3) (2023-03-21)
+
+
+### Library - Chores
+
+* update package.json ([c41fc54](https://github.com/twilio/twilio-cli/commit/c41fc5430b49abbb2c41aa936bbbc45ab7fbd527))
+
+### [5.4.2](https://github.com/twilio/twilio-cli/compare/5.4.1...5.4.2) (2023-03-14)
+
+
+### Library - Fixes
+
+* Changed default node version to 16 to support backward compatiblilty for flex plugin for macos .pkg ([#512](https://github.com/twilio/twilio-cli/issues/512)) ([4d793af](https://github.com/twilio/twilio-cli/commit/4d793af7a937a5ae1b0d62f62e7409e4ee760c01))
+* using node 16 versions for all releases ([#513](https://github.com/twilio/twilio-cli/issues/513)) ([be0dbf2](https://github.com/twilio/twilio-cli/commit/be0dbf2111a66090d3820c39d0e5aeaf414f9498))
+
+
+### Library - Chores
+
+* bump jsonwebtoken from 8.5.1 to 9.0.0 ([#514](https://github.com/twilio/twilio-cli/issues/514)) ([0f7ec42](https://github.com/twilio/twilio-cli/commit/0f7ec429fa8e1546b0b5e6c690e0b821e4470c78))
+
+---------------------------
+**Api**
+- Add new categories for whatsapp template
+
+**Lookups**
+- Remove  from the 
+
+**Supersim**
+- Add ESimProfile's  and  parameters to libraries### [5.4.1](https://github.com/twilio/twilio-cli/compare/5.4.0...5.4.1) (2023-02-23)
+
+
+### Library - Chores
+
+* twilio-node version update ([#507](https://github.com/twilio/twilio-cli/issues/507)) ([7b45685](https://github.com/twilio/twilio-cli/commit/7b456855ea2f4a100733113afa2dea4e92109b15))
+
+
+### Library - Fixes
+
+* modify image name in debian acceptance test ([#505](https://github.com/twilio/twilio-cli/issues/505)) ([5733cd5](https://github.com/twilio/twilio-cli/commit/5733cd552447a9f889e29c0698e10ca42875b8b3))
+* using npx instead of npm bin ([#509](https://github.com/twilio/twilio-cli/issues/509)) ([235b97b](https://github.com/twilio/twilio-cli/commit/235b97b9d82689516409bf2186cc297c5d08bf56))
+
+## [5.4.0](https://github.com/twilio/twilio-cli/compare/5.3.3...5.4.0) (2023-02-09)
+
+---------------------------
+**Library - Feature**
+- [PR #88](https://github.com/twilio/twilio-oai/pull/88): add Page and PageToken parameters to read operations. Thanks to [@childish-sambino](https://github.com/childish-sambino)!
+
+**Lookups**
+- Add  package to the lookup response
+- Add  package to the lookup response### [5.3.3](https://github.com/twilio/twilio-cli/compare/5.3.2...5.3.3) (2023-01-26)
+
+---------------------------
+**Library - Fix**
+- [PR #87](https://github.com/twilio/twilio-oai/pull/87): use long property descriptions if available. Thanks to [@childish-sambino](https://github.com/childish-sambino)!
+- [PR #85](https://github.com/twilio/twilio-oai/pull/85): Nullable Page URLs. Thanks to [@claudiachua](https://github.com/claudiachua)!
+
+**Api**
+- Add  param to Application resource
+
+**Messaging**
+- Add new tollfree verification API property (ExternalReferenceId)]
+
+**Verify**
+- Add  parameter and channel  for sna/sms orchestration
+
+**Twiml**
+- Add support for  noun and  noun, nested  to  and  verb### [5.3.2](https://github.com/twilio/twilio-cli/compare/5.3.1...5.3.2) (2023-01-12)
+
+
+### Library - Fixes
+
+* macos workflow fix ([#484](https://github.com/twilio/twilio-cli/issues/484)) ([a31bf6b](https://github.com/twilio/twilio-cli/commit/a31bf6b573cfee62acb7626ffeeac47c7fe30f2c))
+
+
+### Library - Chores
+
+* bump json5 from 2.2.1 to 2.2.2 ([#483](https://github.com/twilio/twilio-cli/issues/483)) ([829d229](https://github.com/twilio/twilio-cli/commit/829d229184d7be99bcc7eb16c31a943c93106cd9))
+* enable rc support in apt releases ([#485](https://github.com/twilio/twilio-cli/issues/485)) ([ee4cd96](https://github.com/twilio/twilio-cli/commit/ee4cd9611841662a9e91b19a74b6004281c6ba28))
+
+---------------------------
+**Conversations**
+- Add support for creating Multi-Channel Rich Content Messages
+
+**Lookups**
+- Changed the no data message for match postal code from  to  in identity match package
+
+**Messaging**
+- Add update/edit tollfree verification API### [5.3.1](https://github.com/twilio/twilio-cli/compare/5.3.0...5.3.1) (2022-12-29)
+
+---------------------------
+**Library - Fix**
+- [PR #83](https://github.com/twilio/twilio-oai/pull/83): singularize ice-server. Thanks to [@childish-sambino](https://github.com/childish-sambino)!## [5.3.0](https://github.com/twilio/twilio-cli/compare/5.2.3...5.3.0) (2022-12-15)
+
+
+### Library - Features
+
+* Configuring RC release for rpm ([#478](https://github.com/twilio/twilio-cli/issues/478)) ([fcd625e](https://github.com/twilio/twilio-cli/commit/fcd625efd9cdbb2be2fc61da38f77fc19ac50560))
+
+---------------------------
+**Api**
+- Add  param to address create and update
+- Make  optional for user defined message subscription **(breaking change)**
+
+**Flex**
+- Flex Conversations is now Generally Available
+- Adding the ie1 mapping for authorization api, updating service base uri and base url response attribute **(breaking change)**
+- Change web channels to GA and library visibility to public
+- Changing the uri for authorization api from using Accounts to Insights **(breaking change)**
+
+**Media**
+- Gate Twilio Live endpoints behind beta_feature for EOS
+
+**Messaging**
+- Mark  as a required field for Campaign Creation **(breaking change)**
+
+**Oauth**
+- updated openid discovery endpoint uri **(breaking change)**
+- Added device code authorization endpoint
+
+**Supersim**
+- Allow filtering the SettingsUpdates resource by 
+
+**Twiml**
+- Add new Polly Neural voices
+- Add tr-TR, ar-AE, yue-CN, fi-FI languages to SSML  element.
+- Add x-amazon-jyutping, x-amazon-pinyin, x-amazon-pron-kana, x-amazon-yomigana alphabets to SSML  element.
+- Rename  value for SSML   attribute to . **(breaking change)**
+- Rename  attribute to  in SSML  element. **(breaking change)**### [5.2.3](https://github.com/twilio/twilio-cli/compare/5.2.2...5.2.3) (2022-12-01)
+
+---------------------------
+**Flex**
+- Adding new  api in version 
+
+**Lookups**
+- Add  package to the lookup response
+
+**Messaging**
+- Added  parameter to Link Shortening API
+
+**Serverless**
+- Add node16 as a valid Build runtime
+- Add ie1 and au1 as supported regions for all endpoints.### [5.2.2](https://github.com/twilio/twilio-cli/compare/5.2.1...5.2.2) (2022-11-17)
+
+
+### Library - Docs
+
+* Update arch doc to remove keytar ref ([#470](https://github.com/twilio/twilio-cli/issues/470)) ([d18c081](https://github.com/twilio/twilio-cli/commit/d18c081ce0052917e9ed5bd4c575f9889825e1f6))
+
+
+### Library - Chores
+
+* bump @actions/core in /.github/actions/build-rpm ([#447](https://github.com/twilio/twilio-cli/issues/447)) ([422c8fb](https://github.com/twilio/twilio-cli/commit/422c8fb96f20d73299fbeb5dc34ae339d41b507d))
+
+---------------------------
+**Api**
+- Set the Content resource to have public visibility as Preview
+
+**Flex**
+- Adding new parameter  to 'gooddata' response in version 
+
+**Insights**
+- Added  field in List Call Summary
+- Added  field in call summary
+
+
+---------------------------
+**Library - Fix**
+- [PR #81](https://github.com/twilio/twilio-oai/pull/81): add mount names when they cannot be derived from the path. Thanks to [@childish-sambino](https://github.com/childish-sambino)!
+
+**Flex**
+- Adding two new authorization API 'user_roles' and 'gooddata' in version 
+
+**Messaging**
+- Add new Campaign properties (MessageFlow, OptInMessage, OptInKeywords, OptOutMessage, OptOutKeywords, HelpMessage, HelpKeywords)
+
+**Twiml**
+- Add new speech models to .### [5.2.1](https://github.com/twilio/twilio-cli/compare/5.2.0...5.2.1) (2022-11-02)
+
+---------------------------
+**Library - Fix**
+- [PR #80](https://github.com/twilio/twilio-oai/pull/80): update parent logic for handling of parents vs. containers. Thanks to [@childish-sambino](https://github.com/childish-sambino)!
+
+**Api**
+- Added  and  to Message resource with public visibility as Beta
+- Add  and  resource
+
+**Proxy**
+- Remove FailOnParticipantConflict param from Proxy Session create and update and Proxy Participant create
+
+**Supersim**
+- Update SettingsUpdates resource to remove PackageSid
+
+**Taskrouter**
+- Add  query parameter to Workers and TaskQueues for sorting by
+- Add  query param for list reservations endpoint
+
+**Twiml**
+- Add  and  attributes to ## [5.2.0](https://github.com/twilio/twilio-cli/compare/5.1.0...5.2.0) (2022-10-19)
+
+
+### Library - Chores
+
+* run acceptance test on macos x64 executable ([#472](https://github.com/twilio/twilio-cli/issues/472)) ([12097b3](https://github.com/twilio/twilio-cli/commit/12097b3b37fc4ed2e6ff6dec97f90d97f324d7a3))
+
+
+### Library - Fixes
+
+* specifying targets for oclif-dev pack ([#471](https://github.com/twilio/twilio-cli/issues/471)) ([f0dfea5](https://github.com/twilio/twilio-cli/commit/f0dfea5a88e61d26f03a6ffe3b4cd3b50f831969))
+
+---------------------------
+**Library - Chore**
+- [PR #79](https://github.com/twilio/twilio-oai/pull/79): update mountName and className extensions. Thanks to [@childish-sambino](https://github.com/childish-sambino)!
+
+**Library - Fix**
+- [PR #78](https://github.com/twilio/twilio-oai/pull/78): updating property order for yaml files. Thanks to [@kridai](https://github.com/kridai)!
+
+**Api**
+- Make link shortening parameters public **(breaking change)**
+
+**Oauth**
+- added oauth JWKS endpoint
+- Get userinfo resource
+- OpenID discovery resource
+- Add new API for token endpoint
+
+**Supersim**
+- Add SettingsUpdates resource
+
+**Verify**
+- Update Verify Push endpoints to  maturity
+- Verify BYOT add Channels property to the Get Templates response
+
+**Twiml**
+- Add  attribute and  errorType to ## [5.1.0](https://github.com/twilio/twilio-cli/compare/5.0.0...5.1.0) (2022-10-06)
+
+
+### Library - Fixes
+
+* windows executable workflow ([ac8e2ed](https://github.com/twilio/twilio-cli/commit/ac8e2eda4d18a2e19d699adba9e8a96a3b7f93ce))
+
+
+### Library - Chores
+
+* macos workflow fix ([#469](https://github.com/twilio/twilio-cli/issues/469)) ([a650621](https://github.com/twilio/twilio-cli/commit/a650621dbb5091eb10b7cc2d3c2f5cf90fd1101a))
+
+---------------------------
+**Library - Feature**
+- [PR #77](https://github.com/twilio/twilio-oai/pull/77): add helper libs semantic types configuration. Thanks to [@childish-sambino](https://github.com/childish-sambino)!
+
+**Api**
+- Added  to  API.
+- Add AMD attributes to participant create request
+
+**Twiml**
+- Add AMD attributes to  and ## [5.0.0](https://github.com/twilio/twilio-cli/compare/4.2.0...5.0.0) (2022-09-19)
+
+
+### ⚠ BREAKING CHANGES
+
+* upgrade to oclif v2
+
+### Library - Features
+
+* oclif v2 migration ([#466](https://github.com/twilio/twilio-cli/issues/466)) ([a9d57dc](https://github.com/twilio/twilio-cli/commit/a9d57dc8698b2f3eb0457486c2d7d2f5f7d785de))
+
+## [4.2.0](https://github.com/twilio/twilio-cli/compare/4.1.0...4.2.0) (2022-09-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* add node engine support from 14.x+
+
+### Library - Fixes
+
+* add node engine support from 14.x+ ([6de712f](https://github.com/twilio/twilio-cli/commit/6de712f071a0cfe81fead89527fb62226b504798))
+
+
+### Library - Chores
+
+* fix workflow for duplicate release ([#456](https://github.com/twilio/twilio-cli/issues/456)) ([8bf9188](https://github.com/twilio/twilio-cli/commit/8bf9188b99d5af09dc9e2ed3dc701ad1ddec0b00))
+
+---------------------------
+**Flex**
+- Removed redundant  status from Flex Interactions flow **(breaking change)**
+- Adding  and  to Flex Configuration
+
+**Messaging**
+- Add create, list and get tollfree verification API
+
+**Verify**
+- Verify SafeList API endpoints added.
+
+**Video**
+- Add  API
+
+**Twiml**
+- Update  value  to ## [4.1.0](https://github.com/twilio/twilio-cli/compare/4.0.1...4.1.0) (2022-08-25)
+
+
+### Library - Features
+
+* added audit cronjob ([#437](https://github.com/twilio/twilio-cli/issues/437)) ([0ffd3e1](https://github.com/twilio/twilio-cli/commit/0ffd3e1895cbc6fb591cff7ad27f8a0c08602070))
+
+
+### Library - Chores
+
+* bump file-type from 14.7.1 to 16.5.4 ([#426](https://github.com/twilio/twilio-cli/issues/426)) ([3577303](https://github.com/twilio/twilio-cli/commit/35773036174a3c8012789dccba11629ce16e4b2e))
+* update macos failing script ([7c5b231](https://github.com/twilio/twilio-cli/commit/7c5b231a3eea0e0ac70f56d8737c94eaf66fb846))
+* update macos failing script ([#452](https://github.com/twilio/twilio-cli/issues/452)) ([0e09e6e](https://github.com/twilio/twilio-cli/commit/0e09e6ed35de6b48d4253aa582ca3bdb487485bb))
+* update macos failing script ([#453](https://github.com/twilio/twilio-cli/issues/453)) ([9a95b91](https://github.com/twilio/twilio-cli/commit/9a95b91a11a95c6c34ee52171e324c70f9c987d8))
+
+---------------------------
+**Library - Test**
+- [PR #73](https://github.com/twilio/twilio-oai/pull/73): add test-docker rule. Thanks to [@beebzz](https://github.com/beebzz)!
+
+**Api**
+- Remove  from scheduling params and remove optimize parameters. **(breaking change)**
+
+**Routes**
+- Remove Duplicate Create Method - Update Method will work even if Inbound Processing Region is currently empty/404. **(breaking change)**
+
+**Twiml**
+- Add new Polly Neural voices
+- Add new languages to SSML .### [4.0.1](https://github.com/twilio/twilio-cli/compare/4.0.0...4.0.1) (2022-08-11)
+
+
+### Library - Chores
+
+* updated commit msg ([6390c78](https://github.com/twilio/twilio-cli/commit/6390c788cb730aa9ea3dcbf261115d81fec779dd))
+
+## [4.0.0](https://github.com/twilio/twilio-cli/compare/3.6.0...4.0.0) (2022-08-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* node engines support 14.x+
+
+### Library - Chores
+
+* update dependencies ([#430](https://github.com/twilio/twilio-cli/issues/430)) ([bc4703d](https://github.com/twilio/twilio-cli/commit/bc4703d6eb0210183ce92491188325f82e91d212))
+
+
+### Library - Fixes
+
+* add node engine support from 14.x+ ([ef520fd](https://github.com/twilio/twilio-cli/commit/ef520fd5ca9eaba14ef134a10173fa6050a61929))
+* cleanup keytar and port command ([#436](https://github.com/twilio/twilio-cli/issues/436)) ([d00f7ee](https://github.com/twilio/twilio-cli/commit/d00f7ee019b14ae38abda86eb4c910ac3e4b3ff7))
+
+---------------------------   **Library - Feature**   - [PR #72](https://github.com/twilio/twilio-oai/pull/72): Addition of spec files for preview domain. Thanks to [@AsabuHere](https://github.com/AsabuHere)!      **Routes**   - Inbound Proccessing Region API - Public GA      **Supersim**   - Allow updating  on a Fleet## [3.6.0](https://github.com/twilio/twilio-cli/compare/3.5.0...3.6.0) (2022-07-14)
+
+---------------------------
+**Library - Test**
+- [PR #67](https://github.com/twilio/twilio-oai/pull/67): Adding misc as PR type. Thanks to [@rakatyal](https://github.com/rakatyal)!
+
+**Library - Fix**
+- [PR #63](https://github.com/twilio/twilio-oai/pull/63): move the className extension to the operation when necessary. Thanks to [@childish-sambino](https://github.com/childish-sambino)!
+
+**Conversations**
+- Allowed to use  as part of Participant's resource **(breaking change)**
+
+**Lookups**
+- Remove  from the lookup response **(breaking change)**
+
+**Supersim**
+- Add support for  resource to helper libraries
+
+**Verify**
+- Changed summary param  to  to be consistent with list attempts API **(breaking change)**
+- Make  optional on Verification check to support  attempts.## [3.5.0](https://github.com/twilio/twilio-cli/compare/3.4.2...3.5.0) (2022-06-30)
+
+
+### Library - Chores
+
+* bump semver-regex from 3.1.3 to 3.1.4 ([#422](https://github.com/twilio/twilio-cli/issues/422)) ([5043d4e](https://github.com/twilio/twilio-cli/commit/5043d4e868b13285ad614ce5cd1bd3062375815c))
+
+
+### Library - Fixes
+
+* correct a typo in config:set error messaging ([#424](https://github.com/twilio/twilio-cli/issues/424)) ([d581fbb](https://github.com/twilio/twilio-cli/commit/d581fbb681a6f1532d5bc8dbd7219993a425515c))
+
+---------------------------
+**Library - Chore**
+- [PR #64](https://github.com/twilio/twilio-oai/pull/64): adding the preview spec back. Thanks to [@shrutiburman](https://github.com/shrutiburman)!
+- [PR #61](https://github.com/twilio/twilio-oai/pull/61): drop unneeded class names. Thanks to [@childish-sambino](https://github.com/childish-sambino)!
+
+**Api**
+- Added  to  API.
+
+**Insights**
+- Added  field in call summary
+- Added new endpoint to fetch/create/update Call Annotations
+
+**Verify**
+- Remove  beta flag and set maturity to  for Verify TOTP properties and parameters. **(breaking change)**
+- Changed summary param  to  to be consistent with list attempts API **(breaking change)**
+
+**Twiml**
+- Add  to ### [3.4.2](https://github.com/twilio/twilio-cli/compare/3.4.1...3.4.2) (2022-06-16)
+
+---------------------------
+**Lookups**
+- Adding support for Lookup V2 API
+
+**Studio**
+- Corrected PII labels to be 30 days and added context to be PII
+
+**Twiml**
+- Add  attribute, nested  and  elements to  noun.
+- Add support for new Amazon Polly voices (Q2 2022) for  verb
+- Add support for  noun### [3.4.1](https://github.com/twilio/twilio-cli/compare/3.4.0...3.4.1) (2022-05-19)
+
+---------------------------
+**Library - Fix**
+- [PR #57](https://github.com/twilio/twilio-oai/pull/57): add parent field to twilio vendor extensions. Thanks to [@charan678](https://github.com/charan678)!
+
+**Api**
+- Add property  to the recording resources
+
+**Verify**
+- Include  as a channel type in the verifications API.## [3.4.0](https://github.com/twilio/twilio-cli/compare/3.3.3...3.4.0) (2022-05-05)
+
+---------------------------
+**Library - Fix**
+- [PR #56](https://github.com/twilio/twilio-oai/pull/56): add class_name property to twilio vendor extension. Thanks to [@charan678](https://github.com/charan678)!
+
+**Conversations**
+- Expose query parameter  in list operation on Address Configurations resource
+
+**Supersim**
+- Add  and  fields to Super SIM UsageRecords API response.
+- Change ESimProfiles  parameter to optional to enable Activation Code download method support **(breaking change)**
+
+**Verify**
+- Deprecate  parameter in create and update service.### [3.3.3](https://github.com/twilio/twilio-cli/compare/3.3.2...3.3.3) (2022-05-05)
+
+
+### Library - Fixes
+
+* acceptance testing for brew and scoop releases ([#417](https://github.com/twilio/twilio-cli/issues/417)) ([2239160](https://github.com/twilio/twilio-cli/commit/223916004f7843ed55e26f4f0f3ef93657231c47))
+
+
+### Library - Chores
+
+* add dev phone to plugin commands (418) ([ed0455e](https://github.com/twilio/twilio-cli/commit/ed0455e2efda38aa4d575ff5cb15657bcff54dd1))
+
 ### [3.3.2](https://github.com/twilio/twilio-cli/compare/3.3.1...3.3.2) (2022-04-21)
 
 ---------------------------

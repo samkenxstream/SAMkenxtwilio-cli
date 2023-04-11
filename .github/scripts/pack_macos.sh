@@ -23,14 +23,15 @@ import_certificate() {
     security find-identity
 }
 notarize_and_staple() {
+    FILE_PATH="$1"
     #Functionality  to notarize application
     xcrun notarytool store-credentials new-profile --apple-id "$APPLE_ID" --password "$APPLE_ID_APP_PASSWORD" --team-id "$APPLE_TEAM_ID"
     # wait for notarization response and capture it in notarization_log.json
-    xcrun notarytool submit "$FILE_PATH" --keychain-profile new-profile --wait -f json >> $RUNNER_TEMP/notarization_log.json
+    xcrun notarytool submit "$FILE_PATH" --keychain-profile new-profile --wait -f json > $RUNNER_TEMP/notarization_log.json
     notarization_status=$(jq -r .status $RUNNER_TEMP/notarization_log.json)
     notarization_id=$(jq -r .id $RUNNER_TEMP/notarization_log.json)
     echo "for notarization id ${notarization_id} the status is ${notarization_status}"
-    if [${notarization_status} = "Accepted"]
+    if [ "${notarization_status}" = "Accepted" ]
     then
       xcrun stapler staple "$FILE_PATH"
       spctl --assess -vv --type install "$FILE_PATH"
@@ -47,10 +48,12 @@ pack_macos() {
 #  if [ "$REPOSITORY_OWNER" == "twilio" ]
 #  then
     import_certificate
+    #npx oclif pack:macos
     npx oclif-dev pack:macos
-    notarize_and_staple
+#   notarize_and_staple "$FILE_PATH_ARM64"
+    notarize_and_staple "$FILE_PATH_X64"
 #  else
-#   npx oclif-dev pack:macos
+#   npx oclif pack:macos
  # fi
 }
 

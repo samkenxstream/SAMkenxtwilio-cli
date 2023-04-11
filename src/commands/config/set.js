@@ -1,6 +1,6 @@
 const { TwilioCliError } = require('@twilio/cli-core/src/services/error');
 const { BaseCommand } = require('@twilio/cli-core').baseCommands;
-const { flags } = require('@oclif/command');
+const { Flags: flags } = require('@oclif/core');
 const { camelCase } = require('@twilio/cli-core').services.namingConventions;
 
 const { availableConfigs, getFromEnvironment } = require('../../services/config-utility');
@@ -27,7 +27,7 @@ class ConfigSet extends BaseCommand {
     }
     if (isError) {
       throw new TwilioCliError(
-        `No configuration is added to set. Run "twilio configs:set --help" to see how to set a configurations.`,
+        `No configuration is added to set. Run "twilio config:set --help" to see how to set a configurations.`,
       );
     }
     if (isUserConfigUpdated) {

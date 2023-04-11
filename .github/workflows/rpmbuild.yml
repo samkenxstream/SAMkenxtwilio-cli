@@ -2,12 +2,6 @@ name: RPM Build
 
 on:
   workflow_dispatch:
-  workflow_run:
-    # wait for Cli Release to complete, when it completes, start this workflow
-    workflows: ["Cli Release"]
-    branches: [main]
-    types:
-      - completed
 jobs:
 
   rpmbuild:
@@ -15,6 +9,11 @@ jobs:
     steps:
       - name: checkout cli
         uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
 
       - name: get version
         id: get-tag
@@ -50,6 +49,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh release upload ${{ steps.get-tag.outputs.TAG_NAME }} ${{ steps.build_rpm.outputs.rpm_package_path }} --clobber
+
+
   notify-complete-fail:
     if: ${{ failure() || cancelled() }}
     needs: [ rpmbuild ]

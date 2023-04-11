@@ -8,7 +8,7 @@
 
 ## Technology
 
-Twilio CLI is built with the [oclif](https://oclif.io/) CLI framework for Node.js (v8 or higher) using the [“multi-command”](https://oclif.io/docs/multi) CLI template. 
+Twilio CLI is built with the [oclif (v2)](https://oclif.io/) CLI framework for Node.js (v14 or higher) using the [“multi-command”](https://oclif.io/docs/multi) CLI template. 
 
 The oclif framework [documentation](https://oclif.io/docs/introduction) has a general overview of the framework architecture, so this document will focus on the architecture-specific to the Twilio CLI.
 
@@ -121,11 +121,11 @@ When using the CLI, users can cache their credentials for multiple Twilio profil
 
 Profile configuration data is stored in ~/.twilio-cli (moved from the preferred ~/.config/twilio-cli).  We moved away from storing project configurations. To switch between multiple profiles a user can simply use the “twilio profiles:use” command. Profiles are the way to switch between multiple projects, and that really depends on how the user defines the project scope in each profile.
 
-To get access to your Twilio resources, the CLI needs an API key to access it. Instead of asking the user to create an API key, however, we prompt them for their Account SID and Auth Token. Using these, we create an API key for them and save it directly in the config file instead of the system keychain (or whatever their operating system uses for secure password storage). This was done to support platforms without a keychain or similar services. Previously, the [keytar npm module](https://www.npmjs.com/package/keytar) was used to store the system keychains. We will make it clear to the user this key has been created for them and provide a link to view it in the console. The Account SID and Auth Token are not saved anywhere. Only the API Key SID and secret. We will make this clear to the users. 
+To get access to your Twilio resources, the CLI needs an API key to access it. Instead of asking the user to create an API key, however, we prompt them for their Account SID and Auth Token. Using these, we create an API key for them and save it directly in the config file instead of the system keychain (or whatever their operating system uses for secure password storage). This was done to support platforms without a keychain or similar services. We will make it clear to the user this key has been created for them and provide a link to view it in the console. This secure API Key and settings will be stored locally as a profile. The Account SID and Auth Token are not saved anywhere. We make this clear to the users. 
 
 ## Commands and topics
 
-The Twilio CLI is a [“multi-command”](https://oclif.io/docs/multi) CLI in the same way that “git” is a multi-command CLI. This means you run “twilio <command>” to perform an operation, where <command> can be a single command like “help” or a topic + command combination like “incoming-phone-number:list”. Note the topic and command are separated by a colon (this may also support being separated by a space in [future oclif](https://github.com/oclif/oclif/issues/186) versions).
+The Twilio CLI is a [“multi-command”](https://oclif.io/docs/multi) CLI in the same way that “git” is a multi-command CLI. This means you run “twilio <command>” to perform an operation, where <command> can be a single command like “help” or a topic + command combination like “incoming-phone-number:list”. Note the topic and command can be separated by a colon or a [space](https://github.com/oclif/oclif/issues/186).
 
 Nesting commands under a topic are used to organize commands. The general relationship to the Twilio API Definitions is that a topic will correspond to a resource and the command corresponds to the action.
 
@@ -144,7 +144,7 @@ Commands can have aliases. For example, “login” is an alias for “profile:a
 
 ## Documentation and help
 
-The CLI is self-documenting. All topics, commands, and their possible parameters with a short description of each can be discovered from the CLI itself using the “--help” flag. Topics and commands that correspond directly to resources and actions in API definitions will use the existing documentation present in the definitions. URLs to Twilio docs are present wherever official documentation is available.
+The CLI is self-documenting. All topics, commands, and their possible parameters with a short description of each can be discovered from the CLI itself using the “--help” or "-h" flag. Topics and commands that correspond directly to resources and actions in API definitions will use the existing documentation present in the definitions. URLs to Twilio docs are present wherever official documentation is available.
 
 ![](/assets/images/help.png)
 
